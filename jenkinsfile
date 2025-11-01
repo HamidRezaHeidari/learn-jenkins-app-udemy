@@ -3,6 +3,13 @@ pipeline {
 
     stages {
         stage('Main') {
+            agent{
+                docker{
+                    image 'python:3.10'
+                    //reuseNode True
+                }
+            }
+            
             steps {
                 sh "echo 'Hello World'"
                 sh '''
