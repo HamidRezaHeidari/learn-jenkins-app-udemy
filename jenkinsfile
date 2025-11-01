@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment{
+        main_var = "HELLO"
+    }
+
     stages {
         stage('Main') {
 
@@ -29,6 +33,7 @@ pipeline {
             post{
                 always{
                     echo "successfully DOCKER"  
+                    echo "Global VAR : $main_var"
                 } 
             }
 
