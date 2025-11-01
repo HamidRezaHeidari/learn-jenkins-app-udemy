@@ -10,10 +10,11 @@ pipeline {
                 '''
             }
         }
+
         stage('docker-main') {
             agent{
                 docker{
-                    image "python:3.10"
+                    image 'python:3.10'
                     reuseNode True
                 }
             }
