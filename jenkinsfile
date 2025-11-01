@@ -31,7 +31,9 @@ pipeline {
         }
         stage("approval"){
             steps{
-                input message: "Are U Sure?", ok:"YES!"
+                timeout(time:1, unit:"MINUTES"){
+                    input message: "Are U Sure?", ok:"YES!"
+                }
             }
         }
 
@@ -41,7 +43,7 @@ pipeline {
             }
         }
     }
-    
+
     post{
         always{
 
