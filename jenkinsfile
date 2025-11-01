@@ -12,12 +12,7 @@ pipeline {
         }
 
         stage('docker-main') {
-            agent{
-                docker{
-                    image 'python:3.10'
-                    //reuseNode True
-                }
-            }
+
             steps {
                 sh "echo 'Hello from DOCKER'"
             }
