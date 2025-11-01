@@ -5,17 +5,8 @@ pipeline {
         stage('Main') {
             steps {
                 sh "echo 'Hello World'"
-                sh "whoami"
-                cleanWs()
                 sh '''
-                    mkdir -p system
-                    touch system/laptop
-                    echo 'Motherboard' >> system/laptop
-                    cat system/laptop
-                    echo 'Display' >> system/laptop
-                    cat system/laptop
-                    echo 'Keyboard' >> system/laptop
-                    cat system/laptop
+                    echo 'Hello' 
                 '''
             }
         }
