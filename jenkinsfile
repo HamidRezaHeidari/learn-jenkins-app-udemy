@@ -9,6 +9,9 @@ pipeline {
                 sh '''
                     echo 'Hello' 
                 '''
+                script{
+                    env.my_var = 4
+                }
             }
         }
 
@@ -21,6 +24,7 @@ pipeline {
             }
             steps {
                 sh "echo 'Hello from DOCKER'"
+                echo env.my_var
             }
             post{
                 always{
