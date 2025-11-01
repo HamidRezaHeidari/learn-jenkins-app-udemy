@@ -3,7 +3,12 @@ pipeline {
 
     stages {
         stage('Main') {
-
+           agent{
+                docker{
+                    image 'node:18-alpine'
+                    //reuseNode True
+                }
+            }
             steps {
                 sh "echo 'Hello World'"
                 sh '''
@@ -13,12 +18,7 @@ pipeline {
         }
 
         stage('docker-main') {
-            agent{
-                docker{
-                    image 'node:18-alpine'
-                    //reuseNode True
-                }
-            }
+ 
             steps {
                 sh "echo 'Hello from DOCKER'"
             }
