@@ -22,6 +22,12 @@ pipeline {
             steps {
                 sh "echo 'Hello from DOCKER'"
             }
+            post{
+                always{
+                    echo "successfully DOCKER"  
+                } 
+            }
+
         }
 
         stage("Test"){
