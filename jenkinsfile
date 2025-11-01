@@ -3,12 +3,7 @@ pipeline {
 
     stages {
         stage('Main') {
-           agent{
-                docker{
-                    image 'node:18-alpine'
-                    //reuseNode True
-                }
-            }
+
             steps {
                 sh "echo 'Hello World'"
                 sh '''
@@ -18,7 +13,12 @@ pipeline {
         }
 
         stage('docker-main') {
- 
+            agent{
+                docker{
+                    image 'node:18-alpine'
+                    //reuseNode True
+                }
+            }
             steps {
                 sh "echo 'Hello from DOCKER'"
             }
@@ -32,7 +32,7 @@ pipeline {
     }
     post{
         always{
-            junit 'test-results/junit.xml'
+
             echo "success"
         }
     }
