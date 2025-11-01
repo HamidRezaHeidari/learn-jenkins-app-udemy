@@ -34,7 +34,7 @@ pipeline {
         always{
 
             echo "success"
-            junit 'test-results/junit.xml'
+            //junit 'test-results/junit.xml'
         }
     }
 }
