@@ -5,11 +5,11 @@ pipeline {
         stage('Main') {
             agent{
                 docker{
-                    image 'python:3.10'
+                    image 'node:18'
                     //reuseNode True
                 }
             }
-            
+
             steps {
                 sh "echo 'Hello World'"
                 sh '''
