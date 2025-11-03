@@ -15,9 +15,9 @@ pipeline {
             }
 
             steps {
-                sh "echo 'Hello World'"
                 sh '''
-                    echo 'Hello' 
+                    echo 'Hello ...'
+                    python my_python.py 
                 '''
                 script{
                     env.my_var = 4
