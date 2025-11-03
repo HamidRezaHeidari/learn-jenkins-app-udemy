@@ -6,7 +6,19 @@ pipeline {
     }
 
     stages {
+        stage("create-docker"){
+            steps{
+                sh 'docker build -t my-docker-python -f ./dockerfile ./'
+            }
+        }
+
         stage('Main') {
+
+            agent{
+                docker{
+                    image 'my-docker-python'
+                }
+            }
 
             steps {
                 sh "echo 'Hello World'"
