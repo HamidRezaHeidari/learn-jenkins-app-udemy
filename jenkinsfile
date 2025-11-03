@@ -5,13 +5,6 @@ pipeline {
         main_var = "HELLO"
     }
 
-    stages {
-        stage("create-docker"){
-            steps{
-                sh 'docker build -t my-docker-python -f ./dockerfile ./'
-            }
-        }
-
         stage('Main') {
 
             agent{
