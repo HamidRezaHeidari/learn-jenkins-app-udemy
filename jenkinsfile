@@ -5,6 +5,7 @@ pipeline {
         main_var = "HELLO"
     }
 
+    stages {
         stage('Main') {
 
             agent{
